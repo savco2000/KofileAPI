@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="DomainModels\" />
+    <Folder Include="DTOs\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

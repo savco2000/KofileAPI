@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KofileAPI", "KofileAPI\KofileAPI.csproj", "{2643D615-D0A0-4D71-A370-ABF35BA160F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KofileAPI.Tests", "KofileAPI.Tests\KofileAPI.Tests.csproj", "{0F562A4F-BCF7-489B-8030-82E1E57C3F2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2643D615-D0A0-4D71-A370-ABF35BA160F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2643D615-D0A0-4D71-A370-ABF35BA160F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2643D615-D0A0-4D71-A370-ABF35BA160F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F562A4F-BCF7-489B-8030-82E1E57C3F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F562A4F-BCF7-489B-8030-82E1E57C3F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F562A4F-BCF7-489B-8030-82E1E57C3F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F562A4F-BCF7-489B-8030-82E1E57C3F2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
