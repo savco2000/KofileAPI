@@ -1,5 +1,8 @@
 using Xunit;
 using System.Linq;
+using System.Collections.Generic;
+using KofileAPI.DTOs;
+using System;
 
 namespace KofileAPI.Tests
 {
@@ -12,7 +15,7 @@ namespace KofileAPI.Tests
         {
             const int expectedCount = 2;
 
-            var order = _orderService.GetOrders().FirstOrDefault();
+            var order = GetOrders().FirstOrDefault();
 
             var sut = _orderService;           
 
@@ -35,7 +38,7 @@ namespace KofileAPI.Tests
         {
             const int expectedCount = 5;
 
-            var order = _orderService.GetOrders().FirstOrDefault();            
+            var order = GetOrders().FirstOrDefault();            
 
             var sut = _orderService;
 
@@ -56,5 +59,94 @@ namespace KofileAPI.Tests
             Assert.Equal(result.DistributionItems[3].Amount, 2.00m);
             Assert.Equal(result.DistributionItems[4].Amount, 2.00m);
         }
+
+        public IEnumerable<OrderDTO> GetOrders()
+        {
+            var orders = new List<OrderDTO> {
+                new OrderDTO
+                {
+                    OrderDate = new DateTime(2015, 1, 11),
+                    OrderNumber = "20150111000001",
+                    OrderItemDTOs = new List<OrderItemDTO>
+                    {
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 1,
+                            Type = "Real Property Recording",
+                            Pages = 3
+                        },
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 2,
+                            Type = "Real Property Recording",
+                            Pages = 1
+                        }
+                    }
+                },
+                new OrderDTO
+                {
+                    OrderDate = new DateTime(2015, 1, 17),
+                    OrderNumber = "20150117000001",
+                    OrderItemDTOs = new List<OrderItemDTO>
+                    {
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 3,
+                            Type = "Real Property Recording",
+                            Pages = 2
+                        },
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 4,
+                            Type = "Real Property Recording",
+                            Pages = 20
+                        }
+                    }
+                },
+                new OrderDTO
+                {
+                    OrderDate = new DateTime(2015, 1, 18),
+                    OrderNumber = "20150118000001",
+                    OrderItemDTOs = new List<OrderItemDTO>
+                    {
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 5,
+                            Type = "Real Property Recording",
+                            Pages = 5
+                        },
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 6,
+                            Type = "Birth Certificate",
+                            Pages = 1
+                        }
+                    }
+                },
+                new OrderDTO
+                {
+                    OrderDate = new DateTime(2015, 1, 23),
+                    OrderNumber = "20150123000001",
+                    OrderItemDTOs = new List<OrderItemDTO>
+                    {
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 7,
+                            Type = "Birth Certificate",
+                            Pages = 1
+                        },
+                        new OrderItemDTO
+                        {
+                            OrderItemId = 8,
+                            Type = "Birth Certificate",
+                            Pages = 1
+                        }
+                    }
+                }
+            };
+
+            return orders;
+        }
+
     }
 }
